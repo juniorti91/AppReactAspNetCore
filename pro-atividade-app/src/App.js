@@ -1,39 +1,20 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import AtividadeForm from './components/AtividadeForm';
 import AtividadeLista from './components/AtividadeLista';
 
-let initialState = [
-    {
-      id: 1,
-      prioridade: '1',
-      titulo: 'titulo 01',
-      descricao: 'Primeira Atividade'
-    },
-    {
-      id: 2,
-      prioridade: '1',
-      titulo: 'tutilo 02',
-      descricao: 'Segunda Atividade'
-    }
-];
-
 function App() {
 
-  const [atividades, setAtividades] = useState(initialState);
-  const [atividade, setAtividade] = useState({});
+  const [index, setIndex] = useState(0);
+  const [atividades, setAtividades] = useState([]);
+  const [atividade, setAtividade] = useState({id: 0});
 
-  function addAtividade(e) {
-      e.preventDefault(); // Evita que a página fique atualizando
+  useEffect(() => {
+      atividades.length <= 0 ? setIndex(1) : setIndex(Math.max.apply(Math, atividades.map((item) => item.id)) + 1)
+  }, [atividades])
 
-      const atividade = {
-          id: Math.max.apply(Math, atividades.map((item) => item.id)) + 1,
-          prioridade: document.getElementById('prioridade').value,
-          titulo: document.getElementById('titulo').value,
-          descricao: document.getElementById('descricao').value
-      };
-
-      setAtividades([...atividades, {...atividade}]); // Spred operator utilizado para criar um novo array dentro de um array
+  function addAtividade(ativ) {
+      setAtividades([...atividades, {...ativ, id: index }]); // Spred operator utilizado para criar um novo array dentro de um array
   }
 
   function cancelarAtividade() {
@@ -59,9 +40,9 @@ function App() {
     <>
         <AtividadeForm 
             addAtividade={addAtividade} 
-            ativSelecionada={atividade}
             cancelarAtividade={cancelarAtividade}
             atualizarAtividade={atualizarAtividade}
+            ativSelecionada={atividade}
             atividades={atividades} 
         />
 

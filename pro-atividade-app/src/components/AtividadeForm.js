@@ -27,12 +27,8 @@ export default function AtividadeForm(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        if (props.ativSelecionada.id !== 0) {
-            props.atualizarAtividade(atividade);
-        } else {
-            props.addAtividade(atividade);
-        }
+        if (props.ativSelecionada.id !== 0) props.atualizarAtividade(atividade);
+        else props.addAtividade(atividade);
 
         setAtividade(atividadeInicial);
     }
@@ -46,7 +42,7 @@ export default function AtividadeForm(props) {
     }
 
     function atividadeAtual() {
-        if (props.ativSelecionada.id !== 0){
+        if (props.ativSelecionada.id !== 0) {
             return props.ativSelecionada;
         } else {
             return atividadeInicial;
@@ -73,9 +69,9 @@ export default function AtividadeForm(props) {
                 <div className="col-md-12">
                     <label className="form-label">Descrição</label>
                     <textarea name='descricao' value={atividade.descricao} onChange={inputTextHandler} id='descricao' type='text' className="form-control" />
-                </div>            
                 <hr />
-                <div className='col-12'>
+                </div>            
+                <div className='col-12 mt-0'>
                     { atividade.id === 0 ? <button className='btn btn-outline-secondary' type='submit'><i className='fas fa-plus me-2'></i> Atividade </button> 
                         : 
                         <>
