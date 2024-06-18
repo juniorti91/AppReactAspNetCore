@@ -27,7 +27,7 @@ function App() {
       e.preventDefault(); // Evita que a página fique atualizando
 
       const atividade = {
-          id: document.getElementById('id').value,
+          id: Math.max.apply(Math, atividades.map((item) => item.id)) + 1,
           prioridade: document.getElementById('prioridade').value,
           titulo: document.getElementById('titulo').value,
           descricao: document.getElementById('descricao').value
