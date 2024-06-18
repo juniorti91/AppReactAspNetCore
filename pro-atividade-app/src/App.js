@@ -36,14 +36,23 @@ function App() {
       setAtividades([...atividades, {...atividade}]); // Spred operator utilizado para criar um novo array dentro de um array
   }
 
+  function cancelarAtividade() {
+      setAtividade({id: 0});
+  }
+
+  function atualizarAtividade(ativ) {
+      setAtividades(atividades.map(item => item.id === ativ.id ? ativ : item));
+      setAtividade({id: 0});
+  }
+
   function deletarAtividade(id) {
-        const atividadesFiltradas = atividades.filter(atividade => atividade.id !== id );
-        setAtividades([...atividadesFiltradas]);
+      const atividadesFiltradas = atividades.filter(atividade => atividade.id !== id );
+      setAtividades([...atividadesFiltradas]);
   }
 
   function pegarAtividade(id){
-        const atividade = atividades.filter(atividade => atividade.id === id ); 
-        setAtividade(atividade[0])
+      const atividade = atividades.filter(atividade => atividade.id === id ); 
+      setAtividade(atividade[0])
   }
 
   return (
@@ -51,6 +60,8 @@ function App() {
         <AtividadeForm 
             addAtividade={addAtividade} 
             ativSelecionada={atividade}
+            cancelarAtividade={cancelarAtividade}
+            atualizarAtividade={atualizarAtividade}
             atividades={atividades} 
         />
 
