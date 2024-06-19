@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "Y0oQsGnnM5ssp5lbi4KsefYGRIpWQBq+76btHe8ov3u1SCOyoEPO5n+fl3YbhwsZe1Dux877n9OITe3Is3pRrQ==",
+  "success": true,
+  "projectFilePath": "/home/junior/CursoReactAspNetCore/back/src/ProAtividade.API/ProAtividade.API.csproj",
+  "expectedPackageFiles": [
+    "/home/junior/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/home/junior/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/home/junior/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "/home/junior/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "/home/junior/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "/home/junior/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
