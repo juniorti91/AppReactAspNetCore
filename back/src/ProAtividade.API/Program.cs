@@ -1,4 +1,6 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using ProAtividade.API.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c => {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProAtividade.API", Version = "v2" });
 });
+
+builder.Services.AddDbContext<DataContext>(
+    options => options.UseSqlite(builder.Configuration.GetConnectionString("Default"))
+);
 
 var app = builder.Build();
 
