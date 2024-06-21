@@ -1724,6 +1724,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.EntityFrameworkCore >= 6.0.31",
+      "Microsoft.EntityFrameworkCore.Analyzers >= 6.0.31",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.31",
       "Microsoft.EntityFrameworkCore.Sqlite >= 6.0.31",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.31",
@@ -1736,11 +1737,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/junior/CursoReactAspNetCore/back/src/ProAtividade.API/ProAtividade.API.csproj",
+      "projectUniqueName": "/home/junior/ReactAspNetCore/back/src/ProAtividade.API/ProAtividade.API.csproj",
       "projectName": "ProAtividade.API",
-      "projectPath": "/home/junior/CursoReactAspNetCore/back/src/ProAtividade.API/ProAtividade.API.csproj",
+      "projectPath": "/home/junior/ReactAspNetCore/back/src/ProAtividade.API/ProAtividade.API.csproj",
       "packagesPath": "/home/junior/.nuget/packages/",
-      "outputPath": "/home/junior/CursoReactAspNetCore/back/src/ProAtividade.API/obj/",
+      "outputPath": "/home/junior/ReactAspNetCore/back/src/ProAtividade.API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/junior/.nuget/NuGet/NuGet.Config"
@@ -1768,6 +1769,10 @@
         "targetAlias": "net6.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[6.0.31, )"
+          },
+          "Microsoft.EntityFrameworkCore.Analyzers": {
             "target": "Package",
             "version": "[6.0.31, )"
           },
