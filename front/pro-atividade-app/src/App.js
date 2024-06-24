@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import AtividadeForm from './components/AtividadeForm';
 import AtividadeLista from './components/AtividadeLista';
+import api from './api/Atividades';
 
 function App() {
 
@@ -9,9 +10,21 @@ function App() {
   const [atividades, setAtividades] = useState([]);
   const [atividade, setAtividade] = useState({id: 0});
 
+  const pegaTodasAtividades = async () => {
+        const response = await api.get('atividade');
+        return response.data;
+  }
+
   useEffect(() => {
-      atividades.length <= 0 ? setIndex(1) : setIndex(Math.max.apply(Math, atividades.map((item) => item.id)) + 1)
-  }, [atividades])
+      const getAtividades = async () => {
+          const todasAtividade = await pegaTodasAtividades();
+          if (todasAtividade) {
+            setAtividades(todasAtividade);
+            setIndex(atividades.length);
+          }  
+      };
+      getAtividades();
+  }, [])
 
   function addAtividade(ativ) {
       setAtividades([...atividades, {...ativ, id: index }]); // Spred operator utilizado para criar um novo array dentro de um array
