@@ -1737,11 +1737,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/junior/ReactAspNetCore/back/src/ProAtividade.API/ProAtividade.API.csproj",
+      "projectUniqueName": "/home/junior/CursoReactAspNetCore/back/src/ProAtividade.API/ProAtividade.API.csproj",
       "projectName": "ProAtividade.API",
-      "projectPath": "/home/junior/ReactAspNetCore/back/src/ProAtividade.API/ProAtividade.API.csproj",
+      "projectPath": "/home/junior/CursoReactAspNetCore/back/src/ProAtividade.API/ProAtividade.API.csproj",
       "packagesPath": "/home/junior/.nuget/packages/",
-      "outputPath": "/home/junior/ReactAspNetCore/back/src/ProAtividade.API/obj/",
+      "outputPath": "/home/junior/CursoReactAspNetCore/back/src/ProAtividade.API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/junior/.nuget/NuGet/NuGet.Config"

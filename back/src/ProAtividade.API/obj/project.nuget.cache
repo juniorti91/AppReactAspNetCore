@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kv6n88JYExqJ+JHvCnxd0DSX1CpCWKDXZIsCXeora/tQiBSdMQrCJaf9gjn65t0yoRl2MmZaSBzQ/yUbhePSjg==",
+  "dgSpecHash": "b5VSpMsHS+Sm32hCXY19hPYVmbZKHcLnnpicO/8i/y5YZroiImiek4NuBk3J3XSPyyntJAOre5lz9dW1Dd/dHQ==",
   "success": true,
-  "projectFilePath": "/home/junior/ReactAspNetCore/back/src/ProAtividade.API/ProAtividade.API.csproj",
+  "projectFilePath": "/home/junior/CursoReactAspNetCore/back/src/ProAtividade.API/ProAtividade.API.csproj",
   "expectedPackageFiles": [
     "/home/junior/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/junior/.nuget/packages/microsoft.data.sqlite.core/6.0.31/microsoft.data.sqlite.core.6.0.31.nupkg.sha512",

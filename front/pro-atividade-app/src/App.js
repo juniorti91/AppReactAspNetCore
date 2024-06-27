@@ -6,7 +6,6 @@ import api from './api/Atividades';
 
 function App() {
 
-  const [index, setIndex] = useState(0);
   const [atividades, setAtividades] = useState([]);
   const [atividade, setAtividade] = useState({id: 0});
 
@@ -20,14 +19,14 @@ function App() {
           const todasAtividade = await pegaTodasAtividades();
           if (todasAtividade) {
             setAtividades(todasAtividade);
-            setIndex(atividades.length);
           }  
       };
       getAtividades();
   }, [])
 
-  function addAtividade(ativ) {
-      setAtividades([...atividades, {...ativ, id: index }]); // Spred operator utilizado para criar um novo array dentro de um array
+  const addAtividade = async (ativ) => {
+      const response = await api.post('atividade', ativ);
+      setAtividades([...atividades, response.data]); // Spred operator utilizado para criar um novo array dentro de um array
   }
 
   function cancelarAtividade() {
@@ -39,9 +38,11 @@ function App() {
       setAtividade({id: 0});
   }
 
-  function deletarAtividade(id) {
-      const atividadesFiltradas = atividades.filter(atividade => atividade.id !== id );
-      setAtividades([...atividadesFiltradas]);
+  const deletarAtividade = async (id) => {
+      if (await api.delete(`atividade/${id}`)) {
+          const atividadesFiltradas = atividades.filter(atividade => atividade.id !== id );
+          setAtividades([...atividadesFiltradas]);
+      }      
   }
 
   function pegarAtividade(id){
