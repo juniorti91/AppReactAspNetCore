@@ -43,7 +43,7 @@ function App() {
 
   const deletarAtividade = async (id) => {
       if (await api.delete(`atividade/${id}`)) {
-          const atividadesFiltradas = atividades.filter(atividade => atividade.id !== id );
+          const atividadesFiltradas = atividades.filter(atividade => atividade.id !== id);
           setAtividades([...atividadesFiltradas]);
       }      
   }
