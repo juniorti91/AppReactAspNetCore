@@ -19,7 +19,7 @@ function App() {
           const todasAtividade = await pegaTodasAtividades();
           if (todasAtividade) {
             setAtividades(todasAtividade);
-          }  
+          } 
       };
       getAtividades();
   }, [])
@@ -33,8 +33,11 @@ function App() {
       setAtividade({id: 0});
   }
 
-  function atualizarAtividade(ativ) {
-      setAtividades(atividades.map(item => item.id === ativ.id ? ativ : item));
+  const atualizarAtividade = async (ativ) => {
+      const response = await api.put(`atividade/${ativ.id}`, ativ);
+      const { id } = response.data;
+      
+      setAtividades(atividades.map(item => item.id === id ? response.data : item));
       setAtividade({id: 0});
   }
 
