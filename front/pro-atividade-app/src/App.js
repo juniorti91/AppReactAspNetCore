@@ -19,6 +19,11 @@ function App() {
         return response.data;
   }
 
+  const novaAtividade = () => {
+      setAtividade({ id: 0 }); // limpando os campos
+      handleAtividadeModal(); // Acionando o modal
+  }
+
   useEffect(() => {
       const getAtividades = async () => {
           const todasAtividade = await pegaTodasAtividades();
@@ -30,18 +35,23 @@ function App() {
   }, [])
 
   const addAtividade = async (ativ) => {
+      handleAtividadeModal(); // Acionando o modal
+
       const response = await api.post('atividade', ativ);
       setAtividades([...atividades, response.data]); // Spred operator utilizado para criar um novo array dentro de um array
   }
 
-  function cancelarAtividade() {
-      setAtividade({id: 0});
+  const cancelarAtividade = () => {
+      setAtividade({id: 0}); // limpando os campos
+      handleAtividadeModal(); // Acionando o modal
   }
 
   const atualizarAtividade = async (ativ) => {
+      handleAtividadeModal(); // Acionando o modal
+
       const response = await api.put(`atividade/${ativ.id}`, ativ);
       const { id } = response.data;
-      
+
       setAtividades(atividades.map(item => item.id === id ? response.data : item));
       setAtividade({id: 0});
   }
@@ -53,10 +63,10 @@ function App() {
       }      
   }
 
-  function pegarAtividade(id){
+  const pegarAtividade = (id) => {
       const atividade = atividades.filter(atividade => atividade.id === id ); 
       setAtividade(atividade[0]);
-      handleAtividadeModal(); // Abrindo o modal
+      handleAtividadeModal(); // Acionando o modal
   }
 
   return (
@@ -66,9 +76,9 @@ function App() {
                 Atividade {atividade.id !== 0 ? atividade.id : ''}
             </h1>
 
-            <Button variant="outline-secondary" onClick={handleAtividadeModal}>
+            <Button variant="outline-secondary" onClick={novaAtividade}>
                 <i className='fas fa-plus me-2'></i>
-                    Nova Atividade
+                    Atividade
             </Button> 
         </div>
 
