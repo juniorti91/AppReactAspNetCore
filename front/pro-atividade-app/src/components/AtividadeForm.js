@@ -39,7 +39,7 @@ export default function AtividadeForm(props) {
         setAtividade(atividadeInicial);
     }
 
-    function atividadeAtual() {
+    const atividadeAtual = () => {
         if (props.ativSelecionada.id !== 0) {
             return props.ativSelecionada;
         } else {

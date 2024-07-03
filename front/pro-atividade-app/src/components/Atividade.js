@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Atividade(props) {
 
-  function prioridadeLabel(param) {
+  const prioridadeLabel = (param) => {
     switch (param) {
         case 'Baixa':
         case 'Normal':
@@ -13,7 +13,7 @@ export default function Atividade(props) {
     }
   }
 
-  function prioridadeStyle(param, icone) {
+  const prioridadeStyle = (param, icone) => {
       switch (param) {
         case 'Baixa':
             return icone ? 'smile' : 'success';
