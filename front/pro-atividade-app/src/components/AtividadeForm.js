@@ -29,15 +29,13 @@ export default function AtividadeForm(props) {
         e.preventDefault();
         if (props.ativSelecionada.id !== 0) props.atualizarAtividade(atividade);
         else props.addAtividade(atividade);
-
+        
         setAtividade(atividadeInicial);
     }
 
     const handleCancelar = (e) => {
         e.preventDefault();
-
         props.cancelarAtividade();
-
         setAtividade(atividadeInicial);
     }
 
@@ -51,7 +49,6 @@ export default function AtividadeForm(props) {
 
     return (
         <>
-            <h1>Atividade {atividade.id !== 0 ? atividade.id : ''}</h1>
             <form className="row g-3" onSubmit={handleSubmit}> 
                 <div className="col-md-6">
                     <label className="form-label">Título</label>
