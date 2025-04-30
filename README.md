@@ -1,4 +1,4 @@
-# 📚 Documentação do Repositório: AppReactAspNetCore
+# 📚 Documentação do Repositório: AppReactAspNetCore - Sistema de Gerenciamento de Atividades
 
 Este repositório contém um projeto full-stack desenvolvido com React para o frontend e ASP.NET Core para o backend, visando a criação de uma aplicação robusta e integrada.
 
