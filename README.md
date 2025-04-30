@@ -41,5 +41,23 @@ O backend é uma API RESTful desenvolvida com ASP.NET Core e está localizado em
 ### Backend:
 
 1. Navegue até o diretório do backend:
+cd back/src/ProAtividade.API
 
+2. Restaure as dependências:
+dotnet restore
 
+3. Inicie a aplicação:
+dotnet run
+
+A API estará disponível em `https://localhost:5001`.
+
+### Frontend:
+
+1. Navegue até o diretório do frontend:
+cd front/pro-atividade-app
+
+2. Instale as dependências:
+npm install
+
+3. Inicie o aplicativo:
+npm start
